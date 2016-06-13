@@ -3,7 +3,11 @@
     "dev": true,
     "nginx": false,
     "port": 8080,
-    "schema": "http"
+    "schema": "http",
+    "public": {
+      "enabled": false,
+      "path": "/home/onea/projects/js/storehouse/app"
+    }
   },
   "db": {
     "host": "localhost",

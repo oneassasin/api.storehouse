@@ -14,7 +14,8 @@ module.exports = function(app) {
   app.use(helmet());
   app.set('etag', false);
   app.use(morgan('combined'));
-  app.use(express.static('/home/onea/projects/js/storehouse/app'));
+  if (config.get('app:public:enabled'))
+      app.use(express.static(config.get('app:public:path')));
   app.use(cookieParser());
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json({}));
